@@ -2,7 +2,7 @@
 const app = require('./routes/routes');
 
 // Set default port
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Implement 500 error route
 app.use(function (err, req, res, next) {
