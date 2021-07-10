@@ -38,31 +38,31 @@ async function getData(url, variable) {
 
 // Get faction
 async function getFaction() {
-    const factions = await getData('https://wowgen-server.herokuapp.com//factions', '');
+    const factions = await getData('https://wowgen-server.herokuapp.com/factions', '');
     return factions.data[getRandomIndex(factions.data.length)];
 }
 
 // Get race
 async function getRace(faction_id) {
-    const races = await getData('https://wowgen-server.herokuapp.com//races', faction_id);
+    const races = await getData('https://wowgen-server.herokuapp.com/races', faction_id);
     return races.data[getRandomIndex(races.data.length)];
 }
 
 // Get gender
 async function getGender() {
-    const genders = await getData('https://wowgen-server.herokuapp.com//genders', '');
+    const genders = await getData('https://wowgen-server.herokuapp.com/genders', '');
     return genders.data[getRandomIndex(genders.data.length)];
 }
 
 // Get class
 async function getClass(race_id) {
-    const classes = await getData('https://wowgen-server.herokuapp.com//classes', race_id);
+    const classes = await getData('https://wowgen-server.herokuapp.com/classes', race_id);
     return classes.data[getRandomIndex(classes.data.length)];
 }
 
 // Get spec
 async function getSpec(class_id) {
-    const specs = await getData('https://wowgen-server.herokuapp.com//specs', class_id);
+    const specs = await getData('https://wowgen-server.herokuapp.com/specs', class_id);
     return specs.data[getRandomIndex(specs.data.length)];
 }
 
