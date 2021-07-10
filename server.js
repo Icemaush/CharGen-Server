@@ -1,11 +1,6 @@
 // Import routes
 const app = require('./routes/routes');
 
-const cors = require('cors');
-app.use(cors({
-    origin: 'http://localhost:3000/WoWGen-React'
-}));
-
 // Set default port
 const port = process.env.PORT || 5000;
 
