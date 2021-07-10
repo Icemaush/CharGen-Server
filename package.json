@@ -11,7 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "es6-promise": "^4.2.8",
     "express": "^4.17.1",
+    "isomorphic-fetch": "^3.0.0",
     "knex": "^0.95.6",
     "sqlite3": "^5.0.2"
   },
