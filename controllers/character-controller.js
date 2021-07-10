@@ -3,11 +3,7 @@ const imageController = require('./image-controller');
 
 // Generate a random character
 exports.generateCharacter = async (req, res) => {
-
-    // Generate all the random parameters
-    //var character = await createCharacter();
-
-    var character = {};
+    // Generate all the random parameters 
 
     // Character data
     var charFaction = await getFaction();
@@ -15,14 +11,8 @@ exports.generateCharacter = async (req, res) => {
     var charGender = await getGender();
     var charClass = await getClass(charRace.id);
     var charSpec = await getSpec(charClass.id);
-
-    // Character images
-    var charRaceIcon = 'http://localhost:5000/images/races/' + (charRace.name + '_' + charGender.name).replace(' ', '').toLowerCase() + '.png';
-    var charClassIcon = 'http://localhost:5000/images/factions/' + charFaction.name + '.png';
-    var charSpecIcon = 'http://localhost:5000/images/factions/' + charFaction.name + '.png';
-    var charPreviewImage = 'http://localhost:5000/images/factions/' + charFaction.name + '.png';
-
     
+    var character = {};
     character.faction = charFaction.name;
     character.race = charRace.name;
     character.gender = charGender.name;
@@ -48,31 +38,31 @@ async function getData(url, variable) {
 
 // Get faction
 async function getFaction() {
-    const factions = await getData('http://localhost:5000/factions', '');
+    const factions = await getData('https://wowgen-server.herokuapp.com//factions', '');
     return factions.data[getRandomIndex(factions.data.length)];
 }
 
 // Get race
 async function getRace(faction_id) {
-    const races = await getData('http://localhost:5000/races', faction_id);
+    const races = await getData('https://wowgen-server.herokuapp.com//races', faction_id);
     return races.data[getRandomIndex(races.data.length)];
 }
 
 // Get gender
 async function getGender() {
-    const genders = await getData('http://localhost:5000/genders', '');
+    const genders = await getData('https://wowgen-server.herokuapp.com//genders', '');
     return genders.data[getRandomIndex(genders.data.length)];
 }
 
 // Get class
 async function getClass(race_id) {
-    const classes = await getData('http://localhost:5000/classes', race_id);
+    const classes = await getData('https://wowgen-server.herokuapp.com//classes', race_id);
     return classes.data[getRandomIndex(classes.data.length)];
 }
 
 // Get spec
 async function getSpec(class_id) {
-    const specs = await getData('http://localhost:5000/specs', class_id);
+    const specs = await getData('https://wowgen-server.herokuapp.com//specs', class_id);
     return specs.data[getRandomIndex(specs.data.length)];
 }
 
