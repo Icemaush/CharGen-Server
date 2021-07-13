@@ -1,11 +1,11 @@
 const baseUrl = 'https://wowgen-server.herokuapp.com';
 const path = require('path');
-const baseImagePath = 'resources/images/';
+const baseImagePath = 'resources/wow/images/';
 
 //#region Faction images
 // Get faction icon path
 function getFactionIconPath(faction) {
-    const filePath = path.resolve(baseImagePath + factions + '/' + faction + '.png');
+    const filePath = path.resolve(baseImagePath + 'factions/' + faction + '.png');
     return filePath;
 };
 
