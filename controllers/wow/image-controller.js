@@ -1,10 +1,11 @@
 const baseUrl = 'https://wowgen-server.herokuapp.com';
 const path = require('path');
+const baseImagePath = 'resources/images/';
 
 //#region Faction images
 // Get faction icon path
 function getFactionIconPath(faction) {
-    const filePath = path.resolve('images/factions/' + faction + '.png');
+    const filePath = path.resolve(baseImagePath + factions + '/' + faction + '.png');
     return filePath;
 };
 
@@ -17,7 +18,7 @@ function getFactionIconUrl(faction) {
 //#region Race images
 // Get race icon path
 function getRaceIconPath(race, gender) {
-    const filePath = path.resolve('images/races/' + race + '_' + gender + '.png');
+    const filePath = path.resolve(baseImagePath + 'races/' + race + '_' + gender + '.png');
     return filePath;
 };
 
@@ -30,7 +31,7 @@ function getRaceIconUrl(race, gender) {
 //#region Class images
 // Get class icon path
 function getClassIconPath(className) {
-    const filePath = path.resolve('images/classes/' + className + '.png');
+    const filePath = path.resolve(baseImagePath + 'classes/' + className + '.png');
     return filePath;
 };
 
@@ -43,7 +44,7 @@ function getClassIconUrl(className) {
 //#region Spec images
 // Get spec icon path
 function getSpecIconPath(className, spec) {
-    const filePath = path.resolve('images/specs/' + className + '_' + spec + '.png');
+    const filePath = path.resolve(baseImagePath + 'specs/' + className + '_' + spec + '.png');
     return filePath;
 };
 
@@ -56,7 +57,7 @@ function getSpecIconUrl(className, spec) {
 //#region Preview images
 // Get preview image path
 function getPreviewImagePath(race, gender, className) {
-    const filePath = path.resolve('images/armor/T1/' + race + '_' + gender + '_' + className + '.png');
+    const filePath = path.resolve(baseImagePath + '/armor/T1/' + race + '_' + gender + '_' + className + '.png');
     return filePath;
 };
 
