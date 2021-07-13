@@ -11,7 +11,7 @@ function getFactionIconPath(faction) {
 
 // Get faction icon url
 function getFactionIconUrl(faction) {
-    return baseUrl + '/faction-image/' + faction;
+    return baseUrl + '/wow/faction-image/' + faction;
 }
 //#endregion
 
@@ -24,7 +24,7 @@ function getRaceIconPath(race, gender) {
 
 // Get race icon url
 function getRaceIconUrl(race, gender) {
-    return baseUrl + '/race-image/' + race + '/' + gender;
+    return baseUrl + '/wow/race-image/' + race + '/' + gender;
 }
 //#endregion
 
@@ -37,7 +37,7 @@ function getClassIconPath(className) {
 
 // Get class icon url
 function getClassIconUrl(className) {
-    return baseUrl + '/class-image/' + className;
+    return baseUrl + '/wow/class-image/' + className;
 }
 //#endregion
 
@@ -50,7 +50,7 @@ function getSpecIconPath(className, spec) {
 
 // Get spec icon url
 function getSpecIconUrl(className, spec) {
-    return baseUrl + '/spec-image/' + className + '/' + spec;
+    return baseUrl + '/wow/spec-image/' + className + '/' + spec;
 }
 //#endregion
 
@@ -63,7 +63,7 @@ function getPreviewImagePath(race, gender, className) {
 
 // Get preview image url
 function getPreviewImageUrl(race, gender, className) {
-    return baseUrl + '/preview-image/' + race + '/' + gender + '/' + className;
+    return baseUrl + '/wow/preview-image/' + race + '/' + gender + '/' + className;
 }
 //#endregion
 
