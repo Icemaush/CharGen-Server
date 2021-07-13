@@ -1,4 +1,4 @@
-const knex = require('../db/knex');
+const knex = require('../../db/knex');
 
 // Get all factions
 function getFactions() {
