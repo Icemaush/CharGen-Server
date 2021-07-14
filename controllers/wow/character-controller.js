@@ -1,6 +1,6 @@
 require('isomorphic-fetch');
 const imageController = require('./image-controller');
-const baseUrl = 'https://wowgen-server.herokuapp.com';
+const baseUrl = 'https://wowgen-server.herokuapp.com/wow';
 
 // Generate a random character
 exports.generateCharacter = async (req, res) => {
@@ -39,31 +39,31 @@ async function getData(url, variable) {
 
 // Get faction
 async function getFaction() {
-    const factions = await getData(baseUrl + '/wow/factions', '');
+    const factions = await getData(baseUrl + '/factions', '');
     return factions.data[getRandomIndex(factions.data.length)];
 }
 
 // Get race
 async function getRace(faction_id) {
-    const races = await getData(baseUrl + '/wow/races', faction_id);
+    const races = await getData(baseUrl + '/races', faction_id);
     return races.data[getRandomIndex(races.data.length)];
 }
 
 // Get gender
 async function getGender() {
-    const genders = await getData(baseUrl + '/wow/genders', '');
+    const genders = await getData(baseUrl + '/genders', '');
     return genders.data[getRandomIndex(genders.data.length)];
 }
 
 // Get class
 async function getClass(race_id) {
-    const classes = await getData(baseUrl + '/wow/classes', race_id);
+    const classes = await getData(baseUrl + '/classes', race_id);
     return classes.data[getRandomIndex(classes.data.length)];
 }
 
 // Get spec
 async function getSpec(class_id) {
-    const specs = await getData(baseUrl + '/wow/specs', class_id);
+    const specs = await getData(baseUrl + '/specs', class_id);
     return specs.data[getRandomIndex(specs.data.length)];
 }
 
