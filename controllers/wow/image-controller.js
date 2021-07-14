@@ -1,4 +1,4 @@
-const baseUrl = 'https://wowgen-server.herokuapp.com/wow';
+const baseUrl = 'https://chargen-server.herokuapp.com/wow';
 const path = require('path');
 const baseImagePath = 'resources/wow/images/';
 

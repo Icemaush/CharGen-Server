@@ -1,6 +1,6 @@
 require('isomorphic-fetch');
 const imageController = require('./image-controller');
-const baseUrl = 'https://wowgen-server.herokuapp.com/wow';
+const baseUrl = 'https://chargen-server.herokuapp.com/wow';
 
 // Generate a random character
 exports.generateCharacter = async (req, res) => {
