@@ -1,6 +1,6 @@
 const knex = require('knex');
 const path = require('path');
-const databasePath = path.resolve('db/wowgen.db');
+const databasePath = path.resolve('db/wow/wowgen.db');
 
 // Connect to database
 const connectedKnex = knex({
