@@ -4,9 +4,7 @@ const wowApp = express();
 const bodyParser = require('body-parser');
 wowApp.use(bodyParser.urlencoded({ extended: false }));
 wowApp.use(bodyParser.json());
-wowApp.use(cors({
-    origin: 'http://localhost:3000/wowgen/'
-}));
+wowApp.use(cors());
 
 // Require all controllers
 const wowControllers = '../controllers/wow/';
