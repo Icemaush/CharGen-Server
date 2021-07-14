@@ -17,76 +17,76 @@ const imageController = require(wowControllers + 'image-controller');
 const characterController = require(wowControllers + 'character-controller');
 
 //#region Faction routes
-wowApp.get('/factions', async (req, res) => {
+wowApp.get('/wow/factions', async (req, res) => {
     const data = await factionController.getFactions();
     res.status(200).json({ data });
 });
 //#endregion
 
 //#region Race routes
-wowApp.get('/races', async (req, res) => {
+wowApp.get('/wow/races', async (req, res) => {
     const data = await raceController.getRaces();
     res.status(200).json({ data });
 });
 
-wowApp.get('/races/:id', async (req, res) => {
+wowApp.get('/wow/races/:id', async (req, res) => {
     const data = await raceController.getRacesByFactionId(req.params.id);
     res.status(200).json({ data });
 });
 //#endregion
 
 //#region Gender routes
-wowApp.get('/genders', async (req, res) => {
+wowApp.get('/wow/genders', async (req, res) => {
     const data = await genderController.getGenders();
     res.status(200).json({ data });
 });
 //#endregion
 
 //#region Class routes
-wowApp.get('/classes', async (req, res) => {
+wowApp.get('/wow/classes', async (req, res) => {
     const data = await classController.getClasses();
     res.status(200).json({ data });
 });
 
-wowApp.get('/classes/:id', async (req, res) => {
+wowApp.get('/wow/classes/:id', async (req, res) => {
     const data = await classController.getClassesByRaceId(req.params.id);
     res.status(200).json({ data });
 });
 //#endregion
 
 //#region Spec routes
-wowApp.get('/specs', async (req, res) => {
+wowApp.get('/wow/specs', async (req, res) => {
     const data = await specController.getSpecs();
     res.status(200).json({ data });
 });
 
-wowApp.get('/specs/:id', async (req, res) => {
+wowApp.get('/wow/specs/:id', async (req, res) => {
     const data = await specController.getSpecsByClassId(req.params.id);
     res.status(200).json({ data });
 });
 //#endregion
 
 //#region Character routes
-wowApp.get('/generate-character', async (req, res) => {
+wowApp.get('/wow/generate-character', async (req, res) => {
     const data = await characterController.generateCharacter();
     res.status(200).json({ data });
 });
 //#endregion
 
 //#region Image routes
-wowApp.get('/faction-image/:faction', (req, res) => {
+wowApp.get('/wow/faction-image/:faction', (req, res) => {
     res.sendFile(imageController.getFactionIconPath(req.params.faction));
 });
-wowApp.get('/race-image/:race/:gender', (req, res) => {
+wowApp.get('/wow/race-image/:race/:gender', (req, res) => {
     res.sendFile(imageController.getRaceIconPath(req.params.race, req.params.gender));
 });
-wowApp.get('/class-image/:class', (req, res) => {
+wowApp.get('/wow/class-image/:class', (req, res) => {
     res.sendFile(imageController.getClassIconPath(req.params.class));
 });
-wowApp.get('/spec-image/:class/:spec', (req, res) => {
+wowApp.get('/wow/spec-image/:class/:spec', (req, res) => {
     res.sendFile(imageController.getSpecIconPath(req.params.class, req.params.spec));
 });
-wowApp.get('/preview-image/:race/:gender/:class', (req, res) => {
+wowApp.get('/wow/preview-image/:race/:gender/:class', (req, res) => {
     res.sendFile(imageController.getPreviewImagePath(req.params.race, req.params.gender, req.params.class));
 });
 //#endregion
